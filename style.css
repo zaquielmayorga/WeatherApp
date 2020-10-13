@@ -107,5 +107,22 @@ body{
     font-size: 0.8em;
 }
 
+.pueblo p{
+    margin: 0;
+    padding: 0;
+    color: #293251;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.velocidad p{
+    margin: 0;
+    padding: 0;
+    color: #293251;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+
 
 
