@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Weather App - JavaScript</title>
-    <link rel="stylesheet" href="font/Rimouski.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <style>
-        body {
-          background-image: url(fondo/zaquiel\ marcaZM.png);
-        }
-        </style>
-    
-    <div class="container">
-        <div class="app-title">
-            <p>Weather</p>
-        </div>
-        <div class="notification"><p>El usuario bloqueo la ubicacion</p> </div>
-        <div class="weather-container">
-            <div class="weather-icon">
-                <img id="icon" src="icons/unknown.png" alt="">
-            </div>
-            <div class="temperature-value">
-                <p id="temperatura">- °<span>C</span></p>
-            </div>
-            <div class="temperature-description">
-                <p id="descripcion"> - </p>
-            </div>
-            <div class="location">
-                <p id="location">-</p>
-            </div>
-            <div class="pueblo">
-                <p id="pueblo"></p>
-            </div>
-            <div class="velocidad">
-                <p id="velocidad">hola</p>
-            </div>
-        </div>
+    <link rel="stylesheet" href="font/Rimouski.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- search -->
+    <div class="search">
+      <input id="searchInput" type="text" /> <button id="searchButton" onclick="handleOnSearch()">Buscar</button>
     </div>
-    
+    <ul id="results"></ul>
+    <!-- results + add button -->
+    <div class="list">
+      <div class="container">
+        <div class="app-title"><p>Weather</p></div>
+        <div class="notification"></div>
+        <div class="weather-container">
+          <div class="weather-icon"><img id="icon" src="icons/unknown.png" alt="" /></div>
+          <div class="temperature-value">
+            <p id="temperature-value">- °<span>C</span></p>
+          </div>
+          <div class="temperature-description"><p id="temperature-description">-</p></div>
+          <div class="location"><p id="location">-</p></div>
+        </div>
+      </div>
+    </div>
+    <div id="map"></div>
     <script src="app.js"></script>
-</body>
+
+  <script> const tokenMap = "pk.eyJ1IjoiemFxdWllbG1heW9yZ2EiLCJhIjoiY2tncjFob3ltMDlucjJ4bWZrcWp2cjlxaCJ9.hjz4iZOQNHrWjUWidIXpiQ" 
+  mapboxgl.accessToken = tokenMap;
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [12.550343, 55.665957],
+    zoom: 8
+    });
+     
+    var marker = new mapboxgl.Marker()
+    .setLngLat([12.550343, 55.665957])
+    .addTo(map);
+  </script>
+  </body>
 </html>
+
 
 

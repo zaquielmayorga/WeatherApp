@@ -123,6 +123,12 @@ body{
     font-size: 0.8em;
 }
 
+clase list {
 
 
+display: flex;
+    margin: 5px;
+}
+#map { width: 400px; 
+        height: 400px;}
 
